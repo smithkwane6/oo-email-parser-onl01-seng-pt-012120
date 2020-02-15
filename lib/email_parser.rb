@@ -7,14 +7,16 @@ class EmailParser
   attr_accessor :email
 
   def initialize(emails)
-    @email = emails
+    @email = email
+    @emailArr = []
+    @emailArr << email
   end
 
-  def parse
+  def parse 
+    delimiters = [',', '', ',']
+    x = @emailArr.join(", ")
+    y = x.split(Regexp.union(delimiters)).uniq 
 
-    email_array = @email.split(/[, ]/).uniq
-    email_array.reject! {|element| element.empty?}
-    email_array
+    y 
   end
-
 end
