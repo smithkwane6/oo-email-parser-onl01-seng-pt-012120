@@ -12,11 +12,11 @@ class EmailParser
     @emailArr << email
   end
 
-  def parse 
+  def parse
     delimiters = [',', '', ',']
     x = @emailArr.join(", ")
-    y = x.split(Regexp.union(delimiters)).uniq 
+    y = x.split(Regexp.union(delimiters)).uniq
 
-    y 
+    y
   end
 end
